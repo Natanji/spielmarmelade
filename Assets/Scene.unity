@@ -583,6 +583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 1
+  disableDelay: .0500000007
+  enableDelay: 1
 --- !u!1 &1007268595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,3 +1309,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabled: 1
+  disableDelay: .0500000007
+  enableDelay: 1
