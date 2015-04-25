@@ -33,9 +33,12 @@ public class TestHand : MonoBehaviour {
 			Vector3 palmPos = hand.PalmPosition.ToUnity () * 0.02f;
 			Quaternion handRotation = hand.Basis.Rotation();
 
+			Quaternion newRotation = new Quaternion();
+			newRotation.eulerAngles = new Vector3( 0.0f, 0.0f, handRotation.eulerAngles.z + 90.0f );
+
 			palmPos.z = 0.0f;
 			rb.MovePosition( palmPos );
-			rb.MoveRotation( handRotation );
+			rb.MoveRotation( newRotation );
 		}
 		//Debug.Log (palmPos.ToString ());
 	}
