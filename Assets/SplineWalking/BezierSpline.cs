@@ -164,13 +164,14 @@ public class BezierSpline : MonoBehaviour {
 	}
 
 	public void AddCurve () {
+		Vector3 dir = points[points.Length - 1] - points[points.Length - 2];
 		Vector3 point = points[points.Length - 1];
 		Array.Resize(ref points, points.Length + 3);
-		point.x += 1f;
+		point += dir;
 		points[points.Length - 3] = point;
-		point.x += 1f;
+		point += dir;
 		points[points.Length - 2] = point;
-		point.x += 1f;
+		point += dir;
 		points[points.Length - 1] = point;
 
 		Array.Resize(ref modes, modes.Length + 1);
