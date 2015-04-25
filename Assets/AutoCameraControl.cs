@@ -20,7 +20,7 @@ public class AutoCameraControl : MonoBehaviour {
 		Vector3 thisPos = transform.position;
 		
 		Vector3 direction = ballPos - thisPos;
-		direction.x = 0; // do not look left or right
+		//direction.x = 0; // do not look left or right
 		
 		Vector3 ballPosOnScreen = cameraHdl.WorldToViewportPoint (ballPos);
 		//Debug.Log (ballPosOnScreen);
@@ -33,7 +33,7 @@ public class AutoCameraControl : MonoBehaviour {
 			//Vector3 threshold = cameraHdl.ViewportToWorldPoint(new Vector3(0.5f, 0.8f, direction.magnitude));
 			Quaternion rotation = new Quaternion();
 			rotation.eulerAngles = new Vector3(angle, 0, 0);
-			
+						
 			Vector3 adjustedDirection = rotation*direction;
 			
 			Quaternion lookAtRotation = Quaternion.LookRotation (adjustedDirection, Vector3.up);
