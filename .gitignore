@@ -20,5 +20,9 @@
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
+#LeapMotion files
+[Aa]ssets/LeapMotion*
+[Aa]ssets/Plugins*
+
 # include meta files
 !*.*.meta
