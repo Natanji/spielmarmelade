@@ -28,6 +28,9 @@ public class TestHand : MonoBehaviour {
 		} else {
 			hand = hands.Leftmost;
 		}
+	
+		Vector3 parentPos = transform.parent.gameObject.transform.position;
+		Quaternion parentRot = transform.parent.gameObject.transform.rotation;
 
 		if (hand.IsValid) {
 			Vector3 palmPos = hand.PalmPosition.ToUnity () * 0.02f;
@@ -36,9 +39,6 @@ public class TestHand : MonoBehaviour {
 			Quaternion newRotation = new Quaternion ();
 			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, handRotation.eulerAngles.z + 90.0f);
 
-			Vector3 parentPos = transform.parent.gameObject.transform.position;
-			Quaternion parentRot = transform.parent.gameObject.transform.rotation;
-
 			palmPos.z = 0.0f;
 			rb.MovePosition (parentPos + parentRot * palmPos);
 			rb.MoveRotation (parentRot * newRotation);
@@ -46,16 +46,19 @@ public class TestHand : MonoBehaviour {
 			float mousex = Input.GetAxis ("Mouse X");
 			float mousey = Input.GetAxis ("Mouse Y");
 
-			Vector3 newPosition = transform.position;
-			newPosition.x += mousex;
-			newPosition.y += mousey;
-			newPosition.z = 0.0f;
+			Vector3 right = new Vector3( 1.0f, 0.0f, 0.0f);
+			Vector3 up = new Vector3( 0.0f, 1.0f, 0.0f);
+
+			right = parentRot * right;
+			up = parentRot * up;
+
+			Vector3 newPosition = (transform.position - transform.parent.position) + mousey * up + mousex * right;
 
 			Quaternion newRotation = new Quaternion ();
 			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, 90.0f);
 						
-			rb.MovePosition (newPosition);
-			rb.MoveRotation (newRotation);
+			rb.MovePosition (parentPos + newPosition);
+			rb.MoveRotation (parentRot * newRotation);
 
 			//Debug.Log("using mouse now...");
 		}
