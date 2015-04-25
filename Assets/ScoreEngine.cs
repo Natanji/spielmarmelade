@@ -53,14 +53,14 @@ public class ScoreEngine : MonoBehaviour {
 		// reset score if ball falls on floor
 		if (coll.collider.gameObject.CompareTag ("floor")) {
 
+			if(!displayGameOverMessage)
+			{
+				Debug.Log("Game over - resetting in 2 seconds...");
 
+				displayGameOverMessage = true;
 
-			Debug.Log("Game over - resetting in 2 seconds...");
-
-			displayGameOverMessage = true;
-
-			Invoke("GameOver", 2f);
-
+				Invoke("GameOver", 2f);
+			}
 		}
 	}
 
