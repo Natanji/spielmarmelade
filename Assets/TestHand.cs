@@ -36,9 +36,12 @@ public class TestHand : MonoBehaviour {
 			Quaternion newRotation = new Quaternion ();
 			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, handRotation.eulerAngles.z + 90.0f);
 
+			Vector3 parentPos = transform.parent.gameObject.transform.position;
+			Quaternion parentRot = transform.parent.gameObject.transform.rotation;
+
 			palmPos.z = 0.0f;
-			rb.MovePosition (palmPos);
-			rb.MoveRotation (newRotation);
+			rb.MovePosition (parentPos + parentRot * palmPos);
+			rb.MoveRotation (parentRot * newRotation);
 		} else { // use mouse
 			float mousex = Input.GetAxis ("Mouse X");
 			float mousey = Input.GetAxis ("Mouse Y");
