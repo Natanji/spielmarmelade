@@ -31,14 +31,30 @@ public class TestHand : MonoBehaviour {
 
 		if (hand.IsValid) {
 			Vector3 palmPos = hand.PalmPosition.ToUnity () * 0.02f;
-			Quaternion handRotation = hand.Basis.Rotation();
+			Quaternion handRotation = hand.Basis.Rotation ();
 
-			Quaternion newRotation = new Quaternion();
-			newRotation.eulerAngles = new Vector3( 0.0f, 0.0f, handRotation.eulerAngles.z + 90.0f );
+			Quaternion newRotation = new Quaternion ();
+			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, handRotation.eulerAngles.z + 90.0f);
 
 			palmPos.z = 0.0f;
-			rb.MovePosition( palmPos );
-			rb.MoveRotation( newRotation );
+			rb.MovePosition (palmPos);
+			rb.MoveRotation (newRotation);
+		} else { // use mouse
+			float mousex = Input.GetAxis ("Mouse X");
+			float mousey = Input.GetAxis ("Mouse Y");
+
+			Vector3 newPosition = transform.position;
+			newPosition.x += mousex;
+			newPosition.y += mousey;
+			newPosition.z = 0.0f;
+
+			Quaternion newRotation = new Quaternion ();
+			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, 90.0f);
+						
+			rb.MovePosition (newPosition);
+			rb.MoveRotation (newRotation);
+
+			//Debug.Log("using mouse now...");
 		}
 		//Debug.Log (palmPos.ToString ());
 	}
