@@ -87,6 +87,70 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &298126069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 298126071}
+  - 114: {fileID: 298126070}
+  m_Layer: 0
+  m_Name: CameraWalkPath
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &298126070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 298126069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b154883273c2845f39445c8015d81639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: -1.33806431, y: 1.28638053, z: -2.76874876}
+  - {x: -3.07447982, y: .689190388, z: -1.66872501}
+  - {x: 1.52083766, y: -.481461823, z: 1.0139811}
+  - {x: 2.12299609, y: -.00583801279, z: 1.01398098}
+  - {x: 2.7251544, y: .46978581, z: 1.01398087}
+  - {x: -.132404998, y: .575132489, z: -3.40308166}
+  - {x: 4.00000095, y: -.220187664, z: 5.96046457e-09}
+  - {x: 8.13240623, y: -1.01550782, z: 3.40308166}
+  - {x: 6.01540279, y: .511564255, z: -.162737876}
+  - {x: 7.01540327, y: .511564255, z: -.162737876}
+  - {x: 8.01540375, y: .511564255, z: -.162737876}
+  - {x: 9.00000191, y: .597189844, z: 1.53278959}
+  - {x: 10.000001, y: .597189724, z: 1.11223507}
+  - {x: 11, y: .597189605, z: .691680551}
+  - {x: 12.0000038, y: .597189724, z: .814198136}
+  - {x: 13.0000029, y: .597189724, z: -.947072804}
+  - {x: 14.0000019, y: .597189724, z: -2.70834374}
+  - {x: 11.8336735, y: .597189724, z: -4.81099463}
+  - {x: 10.2086287, y: .597189724, z: -4.04059553}
+  - {x: 8.58358383, y: .597189724, z: -3.27019644}
+  - {x: .398351192, y: 1.88357067, z: -3.86877251}
+  - {x: -1.33806431, y: 1.28638053, z: -2.76874876}
+  modes: 0200000002000000020000000200000002000000020000000200000002000000
+  loop: 1
+--- !u!4 &298126071
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 298126069}
+  m_LocalRotation: {x: 0, y: -.700077236, z: 0, w: .714067161}
+  m_LocalPosition: {x: 6.0999999, y: 12.1999998, z: -18.7000008}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
 --- !u!1 &362380112
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +346,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 486398719}
   - 114: {fileID: 486398720}
+  - 114: {fileID: 486398721}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -318,6 +383,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9890d88d106643e4b36bf2e8a011f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &486398721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 486398718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spline: {fileID: 298126070}
+  duration: 60
+  lookForward: 1
+  mode: 1
 --- !u!1 &724280253
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +726,7 @@ GameObject:
   - 124: {fileID: 1272302072}
   - 81: {fileID: 1272302071}
   - 114: {fileID: 1272302076}
+  - 114: {fileID: 1272302077}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -729,6 +810,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2960ddbfe1bfc4c82b1de853c3ddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1272302077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1272302070}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541a76f9c03874323b5154b14ac00427, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spline: {fileID: 298126070}
+  duration: 30
+  lookForward: 1
+  mode: 1
 --- !u!1 &1397475396
 GameObject:
   m_ObjectHideFlags: 0
