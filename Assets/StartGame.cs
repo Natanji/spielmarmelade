@@ -7,9 +7,16 @@ public class StartGame : MonoBehaviour {
 
 	public GameObject ball;
 
+	public GameObject world;
+
+	public float startscreenSpeedupFactor = 10f;
+
 	// Use this for initialization
 	void Start () {
-	
+
+		// speed up movement for start screen
+		SplineWalker sw = world.GetComponent<SplineWalker>();
+		sw.duration /= startscreenSpeedupFactor;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +34,11 @@ public class StartGame : MonoBehaviour {
 
 			// show scoreboard
 			scoreScreen.SetActive(true);
+
+			// restart path
+			SplineWalker sw = world.GetComponent<SplineWalker>();
+			sw.duration *= startscreenSpeedupFactor;
+			sw.Reset();
 		}
 	}
 }

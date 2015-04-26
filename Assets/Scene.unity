@@ -388,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 1564380861}
   scoreboardScreen: {fileID: 1872907440}
+  world: {fileID: 486398718}
 --- !u!82 &402949982
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1327,6 +1328,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreScreen: {fileID: 1872907440}
   ball: {fileID: 402949974}
+  world: {fileID: 486398718}
+  startscreenSpeedupFactor: 10
 --- !u!1 &1536580588
 GameObject:
   m_ObjectHideFlags: 0
