@@ -17,7 +17,7 @@ public class SplineWalker : MonoBehaviour {
 	
 	public void Start()
 	{
-		progress = start_time;
+		progress = start_time / duration;
 	}
 
 	public void Reset()
