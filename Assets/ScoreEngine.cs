@@ -9,6 +9,8 @@ public class ScoreEngine : MonoBehaviour {
 	public GameObject gameOverScreen;
 	public GameObject scoreboardScreen;
 	public GameObject world;
+	public AudioSource hitSound;
+	public AudioSource breakSound;
 
 	// Use this for initialization
 	void Start () {
@@ -83,6 +85,8 @@ public class ScoreEngine : MonoBehaviour {
 		{
 			displayGameOverMessage = true;
 
+			breakSound.Play();
+
 			Debug.Log("Game over - resetting in 2 seconds...");
 			
 			gameOverScreen.SetActive(true);
@@ -126,8 +130,9 @@ public class ScoreEngine : MonoBehaviour {
 			ScoreDisplay.hits += 1;
 			ScoreDisplay.score += 10;
 
-			AudioSource audio = GetComponent<AudioSource>();
-			audio.Play();
+			//AudioSource audio = GetComponent<AudioSource>();
+			//audio.Play();
+			hitSound.Play();
 			//Debug.Log ("collision!");
 		}
 
