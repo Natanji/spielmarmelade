@@ -3,8 +3,10 @@
 public class SplineWalker : MonoBehaviour {
 
 	public BezierSpline spline;
-
+	
 	public float duration;
+
+	public float start_time;
 
 	public bool lookForward;
 
@@ -12,6 +14,11 @@ public class SplineWalker : MonoBehaviour {
 
 	private float progress;
 	private bool goingForward = true;
+	
+	public void Start()
+	{
+		progress = start_time;
+	}
 
 	public void Reset()
 	{
