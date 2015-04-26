@@ -1147,8 +1147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spline: {fileID: 298126070}
-  duration: 158
-  start_time: 140
+  duration: 100
+  start_time: 0
   lookForward: 1
   mode: 1
 --- !u!1 &556793154
@@ -1580,6 +1580,10 @@ Prefab:
     - target: {fileID: 100000, guid: 24be8e1643b8a474fbb57fcda8a1c454, type: 2}
       propertyPath: m_TagString
       value: obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 24be8e1643b8a474fbb57fcda8a1c454, type: 2}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24be8e1643b8a474fbb57fcda8a1c454, type: 2}
@@ -2428,7 +2432,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1272302070}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8ba83c2f22cb7d24f9e6055f18ab8681, type: 3}
