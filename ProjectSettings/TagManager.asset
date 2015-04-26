@@ -8,6 +8,7 @@ TagManager:
   - floor
   - hand
   - scoreboardscreen
+  - obstacle
   layers:
   - Default
   - TransparentFX
