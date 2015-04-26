@@ -705,6 +705,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1564380861}
   scoreboardScreen: {fileID: 1872907440}
   world: {fileID: 486398718}
+  victoryScreen: {fileID: 825448723}
   hitSound: {fileID: 402949982}
   breakSound: {fileID: 402949983}
   collisionSound: {fileID: 402949985}

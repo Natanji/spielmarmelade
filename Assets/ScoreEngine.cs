@@ -9,6 +9,7 @@ public class ScoreEngine : MonoBehaviour {
 	public GameObject gameOverScreen;
 	public GameObject scoreboardScreen;
 	public GameObject world;
+	public GameObject victoryScreen;
 	public AudioSource hitSound;
 	public AudioSource breakSound;
 	public AudioSource collisionSound;
@@ -25,7 +26,7 @@ public class ScoreEngine : MonoBehaviour {
 
 	void ResetBall()
 	{
-		float height = 10f; // TODO
+		float height = 14f; // TODO
 		Vector3 parentPos = transform.parent.gameObject.transform.position + height*Vector3.up;
 		
 		transform.position = parentPos;
@@ -100,6 +101,19 @@ public class ScoreEngine : MonoBehaviour {
 		}
 	}
 
+	void VictoryEvent()
+	{			
+		Debug.Log("Collision with target... Victory!");
+
+		scoreboardScreen.SetActive(false);
+		victoryScreen.SetActive(true);
+		
+		GetComponent<SphereCollider>().enabled = false;
+		GetComponent<Rigidbody>().useGravity = false;
+
+		// todo: pause pathwalker
+	}
+
 	void LostLifeEvent()
 	{		
 		if(!justLostLife)
@@ -150,6 +164,11 @@ public class ScoreEngine : MonoBehaviour {
 		// reset score if ball falls on floor
 		if (coll.collider.gameObject.CompareTag ("floor")) {
 			GameOverEvent();
+		}
+
+		// victory if reaching target
+		if (coll.collider.gameObject.CompareTag ("target")) {
+			VictoryEvent();
 		}
 	}
 
