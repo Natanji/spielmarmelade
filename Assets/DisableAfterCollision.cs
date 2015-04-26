@@ -33,7 +33,7 @@ public class DisableAfterCollision : MonoBehaviour {
 	
 	void setCollision(GameObject obj, bool enabled)
 	{
-		CapsuleCollider c = obj.GetComponent<CapsuleCollider> ();
+		BoxCollider c = obj.GetComponent<BoxCollider> ();
 		
 		c.enabled = enabled;
 	}

@@ -51,13 +51,13 @@ public class TestHand : MonoBehaviour {
 			Quaternion handRotation = hand.Basis.Rotation ();
 
 			Quaternion newRotation = new Quaternion ();
-			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, handRotation.eulerAngles.z + 0.0f);
+			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, handRotation.eulerAngles.z + 90.0f);
 
 			Quaternion leftHandCorrection = new Quaternion();
 			if( !rightHand ) {
-				leftHandCorrection.eulerAngles = new Vector3( 0.0f, 90.0f, 0.0f );
+				leftHandCorrection.eulerAngles = new Vector3( 0.0f, 0.0f, 0.0f );
 			} else {
-				leftHandCorrection.eulerAngles = new Vector3( 0.0f, 90.0f, 0.0f );	
+				leftHandCorrection.eulerAngles = new Vector3( 0.0f, 0.0f, 0.0f );	
 			}
 
 			palmPos.z = 0.0f;
