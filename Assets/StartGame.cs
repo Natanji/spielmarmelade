@@ -38,7 +38,7 @@ public class StartGame : MonoBehaviour {
 			// restart path
 			SplineWalker sw = world.GetComponent<SplineWalker>();
 			sw.duration *= startscreenSpeedupFactor;
-			sw.Reset();
+			sw.Start();
 		}
 	}
 }
