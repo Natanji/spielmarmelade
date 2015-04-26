@@ -676,6 +676,7 @@ GameObject:
   - 135: {fileID: 402949976}
   - 82: {fileID: 402949983}
   - 82: {fileID: 402949985}
+  - 114: {fileID: 402949986}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: ball
@@ -1001,6 +1002,19 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &402949986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 402949974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3629aceb7f0bf43839e0a21576189b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  world: {fileID: 486398718}
+  light: {fileID: 781845737}
 --- !u!1 &486398718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,7 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spline: {fileID: 298126070}
   duration: 158
-  start_time: 150
+  start_time: 0
   lookForward: 1
   mode: 1
 --- !u!1 &556793154
@@ -1236,6 +1250,7 @@ Transform:
   - {fileID: 557620701}
   - {fileID: 1734068973}
   - {fileID: 110256680}
+  - {fileID: 1953525878}
   m_Father: {fileID: 0}
   m_RootOrder: 10
 --- !u!1 &766983057
@@ -3597,7 +3612,7 @@ Transform:
   m_LocalScale: {x: 4.9116621, y: 17.1846008, z: 4.91166306}
   m_Children: []
   m_Father: {fileID: 603964294}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!23 &1953525879
 MeshRenderer:
   m_ObjectHideFlags: 0
