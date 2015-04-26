@@ -3,13 +3,14 @@ using System.Collections;
 
 public class GlowEffect : MonoBehaviour {
 
-	//Component halo = GetComponent("Halo"); halo.GetType().GetProperty("enabled").SetValue(halo, false, null);
+
 	
 
 
 	// Use this for initialization
 	void Start () {
-	
+		//StartCoroutine(Pulsate());
+		(gameObject.GetComponent ("Halo") as Behaviour).enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -19,10 +20,16 @@ public class GlowEffect : MonoBehaviour {
 
 	IEnumerator Pulsate()
 	{
+		float size = 1.0f;
+
+		Component halo = GetComponent("Halo"); 
+
+
 		while(true)
 		{
-			if(light. > 0.0f)
-				light.intensity-= fade;
+			size += 0.01f;
+			halo.GetType().GetProperty("size").SetValue(halo, size, null);
+
 			yield return new WaitForEndOfFrame();
 		}
 	}
