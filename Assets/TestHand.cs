@@ -7,6 +7,7 @@ public class TestHand : MonoBehaviour {
 	protected Controller leap_controller_;
 	public Rigidbody rb;
 	public bool rightHand = false;
+	public float mousePaddleDistance = 3.0f;
 
 	void Awake() {
 		leap_controller_ = new Controller();
@@ -15,6 +16,19 @@ public class TestHand : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+
+		Quaternion parentRot = transform.parent.gameObject.transform.rotation;
+		Vector3 parentPos = transform.parent.gameObject.transform.position;
+		Vector3 correctionUp = new Vector3 (0.0f, 5.0f, 0.0f);
+		Vector3 right = new Vector3( 1.0f, 0.0f, 0.0f);
+
+		right = parentRot * right;
+
+		Vector3 correction = right * -1.0f * mousePaddleDistance;
+		if( rightHand )
+			correction = correction * -1.0f;
+
+		transform.position = parentPos + (parentRot * correctionUp) + correction;
 	}
 	
 	// Update is called once per frame
@@ -43,8 +57,8 @@ public class TestHand : MonoBehaviour {
 			rb.MovePosition (parentPos + parentRot * palmPos);
 			rb.MoveRotation (parentRot * newRotation);
 		} else { // use mouse
-			float mousex = Input.GetAxis ("Mouse X");
-			float mousey = Input.GetAxis ("Mouse Y");
+			float mousex = Input.GetAxis ("Mouse X") * Time.deltaTime * 30.0f;
+			float mousey = Input.GetAxis ("Mouse Y") * Time.deltaTime * 30.0f;
 
 			Vector3 right = new Vector3( 1.0f, 0.0f, 0.0f);
 			Vector3 up = new Vector3( 0.0f, 1.0f, 0.0f);
@@ -52,12 +66,16 @@ public class TestHand : MonoBehaviour {
 			right = parentRot * right;
 			up = parentRot * up;
 
-			Vector3 newPosition = (transform.position - transform.parent.position) + mousey * up + mousex * right;
+			Vector3 correction = right * -1.0f * mousePaddleDistance;
+			if( rightHand )
+				correction = correction * -1.0f;
+
+			Vector3 newPosition = (transform.position - transform.parent.position - correction) + mousey * up + mousex * right;
 
 			Quaternion newRotation = new Quaternion ();
 			newRotation.eulerAngles = new Vector3 (0.0f, 0.0f, 90.0f);
-						
-			rb.MovePosition (parentPos + newPosition);
+
+			rb.MovePosition (parentPos + newPosition + correction);
 			rb.MoveRotation (parentRot * newRotation);
 
 			//Debug.Log("using mouse now...");
