@@ -5,6 +5,9 @@ public class ScoreEngine : MonoBehaviour {
 
 	bool displayGameOverMessage = false;
 
+	public GameObject gameOverScreen;
+	public GameObject scoreboardScreen;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -35,7 +38,7 @@ public class ScoreEngine : MonoBehaviour {
 		ResetBall ();
 		ResetScores ();
 
-		displayGameOverMessage = false;
+		gameOverScreen.SetActive (false);
 	}
 	
 	void OnCollisionEnter(Collision coll){
@@ -57,7 +60,7 @@ public class ScoreEngine : MonoBehaviour {
 			{
 				Debug.Log("Game over - resetting in 2 seconds...");
 
-				displayGameOverMessage = true;
+				gameOverScreen.SetActive(true);
 
 				Invoke("GameOver", 2f);
 			}
