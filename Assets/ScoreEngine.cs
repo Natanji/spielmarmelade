@@ -11,6 +11,7 @@ public class ScoreEngine : MonoBehaviour {
 	public GameObject world;
 	public AudioSource hitSound;
 	public AudioSource breakSound;
+	public AudioSource collisionSound;
 
 	// Use this for initialization
 	void Start () {
@@ -107,6 +108,7 @@ public class ScoreEngine : MonoBehaviour {
 			//AudioSource audio = GetComponent<AudioSource>();
 			//audio.Play();
 			//Debug.Log ("collision!");
+			collisionSound.Play ();
 			
 			Debug.Log("collision with obstacle!");
 			
