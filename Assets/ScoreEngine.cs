@@ -42,7 +42,7 @@ public class ScoreEngine : MonoBehaviour {
 		ResetScores ();
 
 		gameOverScreen.SetActive (false);
-		world.GetComponent<SplineWalker> ().Reset ();
+		world.GetComponent<SplineWalker> ().Start ();
 
 		displayGameOverMessage = false;
 	}
