@@ -185,7 +185,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
       propertyPath: m_LocalScale.x
@@ -235,7 +235,7 @@ Transform:
   m_LocalScale: {x: 1.20828426, y: 8.15453053, z: 1.20828426}
   m_Children: []
   m_Father: {fileID: 603964294}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!23 &220126106
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -583,7 +583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 6.74885178, z: 1}
   m_Children: []
   m_Father: {fileID: 603964294}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!1 &402949974
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spline: {fileID: 298126070}
   duration: 158
-  start_time: 145
+  start_time: 0
   lookForward: 1
   mode: 1
 --- !u!1 &556793154
@@ -1083,7 +1083,7 @@ Transform:
   m_LocalScale: {x: 2.12814093, y: 7.44579649, z: 2.1281414}
   m_Children: []
   m_Father: {fileID: 603964294}
-  m_RootOrder: 0
+  m_RootOrder: 5
 --- !u!23 &557620702
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1153,12 +1153,12 @@ Transform:
   m_LocalPosition: {x: -154.111832, y: 12.2788095, z: 136.534515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 557620701}
   - {fileID: 394256760}
   - {fileID: 220126105}
   - {fileID: 1569465125}
   - {fileID: 1885771884}
   - {fileID: 782029930}
+  - {fileID: 557620701}
   - {fileID: 1734068973}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -1364,80 +1364,6 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 34dbb946159c1b34a8b05477c46a18ee, type: 3}
---- !u!1 &958527968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 958527969}
-  - 33: {fileID: 958527972}
-  - 136: {fileID: 958527971}
-  - 23: {fileID: 958527970}
-  m_Layer: 0
-  m_Name: Cylinder
-  m_TagString: obstacle
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &958527969
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 958527968}
-  m_LocalRotation: {x: 0, y: 0, z: .587626994, w: .80913198}
-  m_LocalPosition: {x: 2.76182556, y: 7.03118992, z: 25.7054901}
-  m_LocalScale: {x: 2.55575037, y: 2.55575085, z: 2.55575061}
-  m_Children: []
-  m_Father: {fileID: 603964294}
-  m_RootOrder: 0
---- !u!23 &958527970
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 958527968}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!136 &958527971
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 958527968}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &958527972
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 958527968}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &994895971
 GameObject:
   m_ObjectHideFlags: 0
@@ -2429,7 +2355,7 @@ Transform:
   m_LocalScale: {x: 2.4260807, y: 8.48820782, z: 2.42608094}
   m_Children: []
   m_Father: {fileID: 603964294}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!23 &1569465126
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3162,7 +3088,7 @@ Transform:
   m_LocalScale: {x: 4.91166162, y: 17.1845951, z: 4.91166306}
   m_Children: []
   m_Father: {fileID: 603964294}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!23 &1885771885
 MeshRenderer:
   m_ObjectHideFlags: 0
