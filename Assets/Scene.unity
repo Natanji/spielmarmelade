@@ -1425,11 +1425,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Objectives:
 
-    Don''t drop the item
-
-    Don''t hit any obstacles
-
-    Reach the end of the path
+    You were chosen to carry the world''s last remaining dragon egg to the runestone.
+    Handle it with care - don''t drop it on the floor or hit any obstacles.
 
 
     Press SPACE to start!'
