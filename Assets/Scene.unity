@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spline: {fileID: 298126070}
   duration: 158
-  start_time: 150
+  start_time: 140
   lookForward: 1
   mode: 1
 --- !u!1 &556793154
@@ -1236,6 +1236,9 @@ Transform:
   - {fileID: 557620701}
   - {fileID: 1734068973}
   - {fileID: 110256680}
+  - {fileID: 1953525878}
+  - {fileID: 1261422991}
+  - {fileID: 1696136617}
   m_Father: {fileID: 0}
   m_RootOrder: 10
 --- !u!1 &766983057
@@ -1496,6 +1499,7 @@ GameObject:
   - 223: {fileID: 825448727}
   - 114: {fileID: 825448726}
   - 114: {fileID: 825448725}
+  - 114: {fileID: 825448728}
   m_Layer: 5
   m_Name: VictoryScreen
   m_TagString: Untagged
@@ -1516,6 +1520,7 @@ RectTransform:
   - {fileID: 766983058}
   - {fileID: 1349694593}
   - {fileID: 1049501541}
+  - {fileID: 1596755599}
   m_Father: {fileID: 1627378520}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -1577,6 +1582,18 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &825448728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 825448723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227439b2c6a70664ab8ed0c53d8b4366, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1596755600}
 --- !u!1 &858665709 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
@@ -1654,8 +1671,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Objectives:
 
-    You were chosen to carry the world''s last remaining dragon egg to the runestone.
-    Handle it with care - don''t drop it on the floor or hit any obstacles.
+    You were chosen to carry the world''s last remaining dragon egg to the runestone
+    and palce it inside. Handle it with care - don''t drop it on the floor or hit
+    any obstacles.
 
 
     Press SPACE to start!'
@@ -1885,8 +1903,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -57}
-  m_SizeDelta: {x: 720, y: 264}
+  m_AnchoredPosition: {x: 0, y: 45}
+  m_SizeDelta: {x: 720, y: 61}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1049501542
 MonoBehaviour:
@@ -1913,13 +1931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You successfully brought the dragon egg back!
-
-
-    $$STATS$$
-
-
-    $$SCORES$$'
+  m_Text: You successfully brought the dragon egg back!
 --- !u!222 &1049501543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1984,6 +1996,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1261422990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1261422991}
+  - 33: {fileID: 1261422994}
+  - 136: {fileID: 1261422993}
+  - 23: {fileID: 1261422992}
+  m_Layer: 0
+  m_Name: Cylinder 5
+  m_TagString: obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1261422991
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261422990}
+  m_LocalRotation: {x: .531394541, y: .0472675264, z: -.842184484, w: .0781732425}
+  m_LocalPosition: {x: 117.82, y: 9.27999973, z: -10.3500004}
+  m_LocalScale: {x: 3.35880303, y: 11.7515669, z: 3.35880399}
+  m_Children: []
+  m_Father: {fileID: 603964294}
+  m_RootOrder: 9
+--- !u!23 &1261422992
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261422990}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1261422993
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261422990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1261422994
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1261422990}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1272302070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2854,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1569465124}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1596755598
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1596755599}
+  - 222: {fileID: 1596755601}
+  - 114: {fileID: 1596755600}
+  m_Layer: 5
+  m_Name: Text 2
+  m_TagString: victoryscreen
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1596755599
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1596755598}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 825448724}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: -87}
+  m_SizeDelta: {x: 720, y: 164}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1596755600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1596755598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .764705896, g: .764705896, b: .764705896, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: $$STATS$$
+--- !u!222 &1596755601
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1596755598}
 --- !u!1 &1627378516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2861,6 +3013,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1696136616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1696136617}
+  - 33: {fileID: 1696136620}
+  - 136: {fileID: 1696136619}
+  - 23: {fileID: 1696136618}
+  m_Layer: 0
+  m_Name: Cylinder 6
+  m_TagString: obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1696136617
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696136616}
+  m_LocalRotation: {x: .539604962, y: .0367361791, z: -.8395015, w: .0520986542}
+  m_LocalPosition: {x: 140.660004, y: 12.0900002, z: -5.71999979}
+  m_LocalScale: {x: 3.35880136, y: 11.7515602, z: 3.35880375}
+  m_Children: []
+  m_Father: {fileID: 603964294}
+  m_RootOrder: 10
+--- !u!23 &1696136618
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696136616}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &1696136619
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696136616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1696136620
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696136616}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1697072698
 Prefab:
   m_ObjectHideFlags: 0
@@ -3597,7 +3823,7 @@ Transform:
   m_LocalScale: {x: 4.9116621, y: 17.1846008, z: 4.91166306}
   m_Children: []
   m_Father: {fileID: 603964294}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!23 &1953525879
 MeshRenderer:
   m_ObjectHideFlags: 0

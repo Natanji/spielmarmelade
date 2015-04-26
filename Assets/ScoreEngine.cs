@@ -14,6 +14,8 @@ public class ScoreEngine : MonoBehaviour {
 	public AudioSource breakSound;
 	public AudioSource collisionSound;
 
+	GameObject lastCollisionHand;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -38,6 +40,7 @@ public class ScoreEngine : MonoBehaviour {
 		ScoreDisplay.score = 0;
 		ScoreDisplay.timer = 0.0f;
 		ScoreDisplay.lifes = 3;
+		ScoreDisplay.combo = 0;
 	}
 
 	void GameOverAsync()
@@ -112,6 +115,7 @@ public class ScoreEngine : MonoBehaviour {
 		GetComponent<Rigidbody>().useGravity = false;
 
 		// todo: pause pathwalker
+		//world.GetComponent<SplineWalker> ();
 	}
 
 	void LostLifeEvent()
@@ -121,7 +125,8 @@ public class ScoreEngine : MonoBehaviour {
 			justLostLife = true;
 			
 			ScoreDisplay.lifes -= 1;
-			ScoreDisplay.score -= 10;
+			ScoreDisplay.score -= 100;
+			ScoreDisplay.combo = 0;
 			
 			//AudioSource audio = GetComponent<AudioSource>();
 			//audio.Play();
@@ -147,13 +152,26 @@ public class ScoreEngine : MonoBehaviour {
 		// on collision with hand
 		if (coll.collider.gameObject.CompareTag ("hand")) {
 
+			// increase combo if using alternate hands
+			if(lastCollisionHand == null || lastCollisionHand != coll.collider.gameObject)
+			{
+				lastCollisionHand = coll.collider.gameObject;
+				ScoreDisplay.combo += 1;
+			}
+			else
+			{
+				ScoreDisplay.combo = 0;
+			}
+			
 			ScoreDisplay.hits += 1;
-			ScoreDisplay.score += 10;
+			ScoreDisplay.score += 10 * ScoreDisplay.combo;
 
 			//AudioSource audio = GetComponent<AudioSource>();
 			//audio.Play();
 			hitSound.Play();
 			//Debug.Log ("collision!");
+
+
 		}
 
 		// on collision with obstacle
