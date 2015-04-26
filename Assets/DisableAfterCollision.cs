@@ -8,6 +8,8 @@ public class DisableAfterCollision : MonoBehaviour {
 	public float disableDelay = 0.01f;
 	public float enableDelay = 1.0f;
 
+	public Renderer r;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -20,7 +22,7 @@ public class DisableAfterCollision : MonoBehaviour {
 
 	void setTransparency(GameObject obj, float alpha)
 	{
-		Renderer r = obj.GetComponent<Renderer>();
+		//Renderer r = obj.GetComponentInChildren<Renderer>();
 		//r.enabled = true;
 		
 		Color oldColor = r.material.color;
@@ -33,7 +35,7 @@ public class DisableAfterCollision : MonoBehaviour {
 	
 	void setCollision(GameObject obj, bool enabled)
 	{
-		BoxCollider c = obj.GetComponent<BoxCollider> ();
+		CapsuleCollider c = obj.GetComponent<CapsuleCollider> ();
 		
 		c.enabled = enabled;
 	}
