@@ -18,11 +18,13 @@ public class SplineWalker : MonoBehaviour {
 	public void Start()
 	{
 		progress = start_time / duration;
+		Enable ();
 	}
 
 	public void Reset()
 	{
 		progress = 0f;
+		Enable ();
 	}
 
 	private void Update () {
@@ -58,5 +60,13 @@ public class SplineWalker : MonoBehaviour {
 
 	public float getProgress(){
 		return progress * duration;
+	}
+	
+	public void Enable() {
+		goingForward = true;
+	}
+
+	public void Disable() {
+		goingForward = false;
 	}
 }
