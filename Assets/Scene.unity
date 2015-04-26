@@ -232,11 +232,11 @@ MonoBehaviour:
   - {x: 1.62978435, y: 0, z: 13.2820415}
   - {x: .993036449, y: 0, z: 12.9398642}
   - {x: .356288522, y: 0, z: 12.5976868}
-  - {x: -.629771829, y: .737200558, z: 12.0326233}
-  - {x: -1.25402129, y: .902334213, z: 11.8805685}
-  - {x: -1.87827075, y: 1.06746793, z: 11.7285137}
-  - {x: -2.93711591, y: .579983711, z: 11.6349535}
-  - {x: -3.7743268, y: .745117366, z: 11.5510702}
+  - {x: -.7120502, y: -.228156209, z: 12.3623791}
+  - {x: -1.3362999, y: -.158877, z: 12.2103252}
+  - {x: -1.96054959, y: -.0895977914, z: 12.0582714}
+  - {x: -3.53917289, y: .155741125, z: 11.6364279}
+  - {x: -4.36360264, y: .32087478, z: 11.5013208}
   modes: 020000000200000002000000010000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000020000000200000002000000
   loop: 0
 --- !u!4 &298126071
@@ -708,7 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spline: {fileID: 298126070}
   duration: 158
-  start_time: 0
+  start_time: 145
   lookForward: 1
   mode: 1
 --- !u!1 &556793154
@@ -987,6 +987,22 @@ MonoBehaviour:
   disableDelay: .0500000007
   enableDelay: 1
   r: {fileID: 1493379512}
+--- !u!1 &858665709 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
+  m_PrefabInternal: {fileID: 1100715060}
+--- !u!64 &858665714
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 858665709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 34dbb946159c1b34a8b05477c46a18ee, type: 3}
 --- !u!1 &958527968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1374,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
       propertyPath: m_LocalScale.x
@@ -1371,6 +1387,10 @@ Prefab:
     - target: {fileID: 400000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
       propertyPath: m_LocalScale.z
       value: 23.4383278
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a74d6c1e0c291b64db4bad3a3b342144, type: 2}
