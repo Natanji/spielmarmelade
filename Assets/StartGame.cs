@@ -5,6 +5,8 @@ public class StartGame : MonoBehaviour {
 
 	public GameObject scoreScreen;
 
+	public GameObject ball;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,6 +21,9 @@ public class StartGame : MonoBehaviour {
 		{
 			gameObject.SetActive(false);
 			Debug.Log("starting game...");
+
+			// enable ball
+			ball.SetActive(true);
 
 			// show scoreboard
 			scoreScreen.SetActive(true);
