@@ -112,10 +112,13 @@ public class ScoreEngine : MonoBehaviour {
 		victoryScreen.SetActive(true);
 		
 		GetComponent<SphereCollider>().enabled = false;
-		GetComponent<Rigidbody>().useGravity = false;
+
+		Rigidbody rb = GetComponent<Rigidbody> ();
+		rb.useGravity = false;
+		rb.constraints = RigidbodyConstraints.FreezeAll;
 
 		// todo: pause pathwalker
-		//world.GetComponent<SplineWalker> ();
+		world.GetComponent<SplineWalker> ().Disable();
 	}
 
 	void LostLifeEvent()

@@ -14,6 +14,8 @@ public class SplineWalker : MonoBehaviour {
 
 	private float progress;
 	private bool goingForward = true;
+
+	bool enabled = true;
 	
 	public void Start()
 	{
@@ -28,6 +30,9 @@ public class SplineWalker : MonoBehaviour {
 	}
 
 	private void Update () {
+		if (!enabled)
+			return;
+
 		if (goingForward) {
 			progress += Time.deltaTime / duration;
 			if (progress > 1f) {
@@ -63,10 +68,10 @@ public class SplineWalker : MonoBehaviour {
 	}
 	
 	public void Enable() {
-		goingForward = true;
+		enabled = true;
 	}
 
 	public void Disable() {
-		goingForward = false;
+		enabled = false;
 	}
 }
