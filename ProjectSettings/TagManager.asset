@@ -9,6 +9,7 @@ TagManager:
   - hand
   - scoreboardscreen
   - obstacle
+  - target
   layers:
   - Default
   - TransparentFX
