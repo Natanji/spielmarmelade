@@ -55,4 +55,8 @@ public class SplineWalker : MonoBehaviour {
 			transform.LookAt(position + spline.GetDirection(progress));
 		}
 	}
+
+	public float getProgress(){
+		return progress * duration;
+	}
 }
