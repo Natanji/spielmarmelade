@@ -46,7 +46,11 @@ public class ScoreEngine : MonoBehaviour {
 
 		gameOverScreen.SetActive (false);
 		world.GetComponent<SplineWalker> ().Start ();
+				
+		GetComponent<SphereCollider>().enabled = true;
+		GetComponent<Rigidbody>().useGravity = true;
 
+		justLostLife = false;
 		displayGameOverMessage = false;
 	}
 
