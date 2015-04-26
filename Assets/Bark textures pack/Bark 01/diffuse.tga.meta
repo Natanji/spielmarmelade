@@ -1,7 +1,5 @@
 fileFormatVersion: 2
-guid: 6de09264dc49dbd48965d361669dbcd8
-timeCreated: 1430038423
-licenseType: Free
+guid: fddd666da61c1e64cbc701b105f0a9b8
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -27,9 +25,9 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 128
+  maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 2
     aniso: -1
     mipBias: -1
     wrapMode: -1
@@ -46,7 +44,31 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
   textureType: -1
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: Web
+    maxTextureSize: 512
+    textureFormat: -1
+    compressionQuality: 50
+  - buildTarget: iPhone
+    maxTextureSize: 256
+    textureFormat: -1
+    compressionQuality: 50
+  - buildTarget: Android
+    maxTextureSize: 256
+    textureFormat: -1
+    compressionQuality: 50
+  - buildTarget: BlackBerry
+    maxTextureSize: 256
+    textureFormat: -1
+    compressionQuality: 50
+  - buildTarget: Windows Store Apps
+    maxTextureSize: 256
+    textureFormat: -1
+    compressionQuality: 50
+  - buildTarget: WP8
+    maxTextureSize: 256
+    textureFormat: -1
+    compressionQuality: 50
   spriteSheet:
     sprites: []
   spritePackingTag: 

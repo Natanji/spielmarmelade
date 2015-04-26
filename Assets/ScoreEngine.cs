@@ -5,6 +5,10 @@ public class ScoreEngine : MonoBehaviour {
 
 	bool displayGameOverMessage = false;
 
+	public GameObject gameOverScreen;
+	public GameObject scoreboardScreen;
+	public GameObject world;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,7 +21,7 @@ public class ScoreEngine : MonoBehaviour {
 
 	void ResetBall()
 	{
-		float height = 10f;
+		float height = 10f; // TODO
 		Vector3 parentPos = transform.parent.gameObject.transform.position + height*Vector3.up;
 		
 		transform.position = parentPos;
@@ -35,7 +39,8 @@ public class ScoreEngine : MonoBehaviour {
 		ResetBall ();
 		ResetScores ();
 
-		displayGameOverMessage = false;
+		gameOverScreen.SetActive (false);
+		world.GetComponent<SplineWalker> ().Reset ();
 	}
 	
 	void OnCollisionEnter(Collision coll){
@@ -57,7 +62,7 @@ public class ScoreEngine : MonoBehaviour {
 			{
 				Debug.Log("Game over - resetting in 2 seconds...");
 
-				displayGameOverMessage = true;
+				gameOverScreen.SetActive(true);
 
 				Invoke("GameOver", 2f);
 			}
