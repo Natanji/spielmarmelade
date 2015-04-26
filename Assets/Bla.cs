@@ -54,7 +54,7 @@ public class Bla : MonoBehaviour {
 		Vector3 front = new Vector3 ( 0.0f, 0.0f, 1.0f );
 		Vector3 normal = parentRot * front;
 
-		Vector3 projPoint = ProjectPointOnPlane (normal, parentPos - front * 1.0f, posBefore);
+		Vector3 projPoint = ProjectPointOnPlane (normal, parentPos - front * 0.0f, posBefore);
 		transform.position = projPoint;
 
 	}
