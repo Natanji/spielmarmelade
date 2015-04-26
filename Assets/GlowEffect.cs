@@ -16,14 +16,4 @@ public class GlowEffect : MonoBehaviour {
 	void Update () {
 	
 	}
-
-	IEnumerator Pulsate()
-	{
-		while(true)
-		{
-			if(light. > 0.0f)
-				light.intensity-= fade;
-			yield return new WaitForEndOfFrame();
-		}
-	}
 }
