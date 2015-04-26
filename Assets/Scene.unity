@@ -208,7 +208,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &362380112
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,14 +291,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 402949978}
   - 33: {fileID: 402949977}
-  - 135: {fileID: 402949976}
   - 23: {fileID: 402949975}
   - 54: {fileID: 402949979}
   - 114: {fileID: 402949980}
   - 114: {fileID: 402949981}
   - 82: {fileID: 402949982}
   - 122: {fileID: 402949984}
-  - 114: {fileID: 402949983}
+  - 135: {fileID: 402949976}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: ball
@@ -316,7 +315,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e90f6f2173ead429c9b8ed32e524b74c, type: 2}
+  - {fileID: 2100000, guid: 46d8e32b24604fa45a1731f8d3a9061d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -336,19 +335,19 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402949974}
-  m_Material: {fileID: 13400000, guid: ef5731a14c3c94d2abb0f9137f6c9348, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 1.28798795
+  m_Center: {x: 0, y: .287988007, z: 0}
 --- !u!33 &402949977
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402949974}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300052, guid: ff7024c0fd3be534cb85b8491d1803d2, type: 3}
 --- !u!4 &402949978
 Transform:
   m_ObjectHideFlags: 0
@@ -357,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 402949974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 14.8299999, z: 0}
-  m_LocalScale: {x: 1.32201326, y: 1.32201326, z: 1.32201326}
+  m_LocalScale: {x: .800000012, y: .800000012, z: .800000012}
   m_Children:
   - {fileID: 781845736}
   m_Father: {fileID: 486398719}
@@ -471,28 +470,17 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &402949983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 402949974}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46d6e68bd7e649d46b95a5819997d8d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!122 &402949984
 Halo:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 402949974}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Color:
     serializedVersion: 2
     rgba: 4291952896
-  m_Size: 1.27999997
+  m_Size: 2.1099999
 --- !u!1 &486398718
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +635,7 @@ Transform:
   m_Children:
   - {fileID: 958527969}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &781845735
 GameObject:
   m_ObjectHideFlags: 0
